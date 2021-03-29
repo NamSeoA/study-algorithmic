@@ -26,6 +26,8 @@ public class practice1 {
 	/*  A가 B보다 큰 경우에는 '>'를 출력한다.
 	    A가 B보다 작은 경우에는 '<'를 출력한다.
 	    A와 B가 같은 경우에는 '=='를 출력한다. */
+   A = sc.nextInt();
+   B = sc.nextInt();
    
    if(A>B) {
 	  System.out.println(">");
