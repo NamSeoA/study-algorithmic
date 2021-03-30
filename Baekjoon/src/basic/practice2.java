@@ -34,7 +34,10 @@ public class practice2 {
 			   System.out.println(H+"시"+(M-45)+"분 알람이 등록되었습니다.");
 		   }else if(M==45) {
 			   System.out.println(H+"시 알람이 등록되었습니다.");
-		   }else{
+		   } else{
+			   if(H == 0) {
+				   H = 24;
+			   }
 			   System.out.println((H-1)+"시"+(60-(45-M))+"분 알람이 등록되었습니다.");
 		   }
 		   
