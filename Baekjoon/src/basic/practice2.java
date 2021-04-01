@@ -19,7 +19,7 @@ public class practice2 {
 		 현재 상근이가 설정한 알람 시각이 주어졌을 때, 창영이의 방법을 사용한다면, 이를 언제로 고쳐야 하는지 구하는 프로그램을 작성하시오. 
 		     
 		 첫째 줄에 두 정수 H와 M이 주어진다. (0 ≤ H ≤ 23, 0 ≤ M ≤ 59) 그리고 이것은 현재 상근이가 설정한 놓은 알람 시간 H시 M분을 의미한다.
-		 입력 시간은 24시간 표현을 사용한다. 24시간 표현에서 하루의 시작은 0:0(자정)이고, 끝은 23:59(다음날 자정 1분 전)이다. 시간을 나타낼 때, 불필요한 0은 사용하지 않는다. */
+		 입력 시간은 24시간 표현을 사용한다. 24시간 표현에서 하루의 시작은 0:0(자정)이고, 끝은 23:59(다음날 자정 1분 전)이다. 시간을 나타낼 때, 불필요한 0은 사용하지 않는다. 
 		  
 		   int H; //0 ≤ H ≤ 23 H시 
 		   int M; //0 ≤ M ≤ 59 M분 
@@ -41,7 +41,7 @@ public class practice2 {
 			   }
 			   System.out.println((H-1)+"시"+(60-(45-M))+"분 알람이 등록되었습니다.");
 		   }
-		   
+		   */
 		   
 		   // 헷갈렸던 부분
 		   /*
@@ -51,16 +51,14 @@ public class practice2 {
 		    물론 빌려왔으니 시간은 -1 이 되어야한다 ~!
 		    */
 		
-		   
-		   
-
-		   
+		 
+		  // for문 ================================================================================ 
 		   
 		  // 2739 (3월 31일)
 		  /*
 		   N을 입력받은 뒤, 구구단 N단을 출력하는 프로그램을 작성하시오. 출력 형식에 맞춰서 출력하면 된다.
 		   첫째 줄에 N이 주어진다. N은 1보다 크거나 같고, 9보다 작거나 같다.
-		  */
+		  
 		   
 		  int N;
 		  System.out.println("숫자를 입력해주세요.");
@@ -73,9 +71,99 @@ public class practice2 {
 			System.out.println(N + "*" + i + "=" + (N*i));
 		 }
 	  
+		 */  
+		 
+		 // 10950번 (4월 1일)
+		 /* 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오. 
+		    첫째 줄에 테스트 케이스의 개수 T가 주어진다.
+			각 테스트 케이스는 한 줄로 이루어져 있으며, 각 줄에 A와 B가 주어진다. (0 < A, B < 10)
+		  
+		   
+		 
+		   System.out.println("몇번 더하겠습니까?");
+		   int T = sc.nextInt();
+		   
+		   
+		   for(int i=0; i<T; i++) {
+			   int A = sc.nextInt();
+			   int B = sc.nextInt();
+			   System.out.println(A+B);
+		   }
+		   */
+		 
+		   
+		   // 8393번 (4월 1일)
+		   /*
+		    n이 주어졌을 때, 1부터 n까지 합을 구하는 프로그램을 작성하시오.
+		    첫째 줄에 n (1 ≤ n ≤ 10,000)이 주어진다.
+		   */
+		 
+		   int n = sc.nextInt();
+		   int sum = 0;
+		   
+		   for(int i=1; i<=n; i++) {
+			   sum += i;
+		   }
+		   System.out.println(sum);
 		   
 		   
 		   
-	}
+		   // 15552번 
+		   /*
+		    첫 줄에 테스트케이스의 개수 T가 주어진다. T는 최대 1,000,000이다. 다음 T줄에는 각각 두 정수 A와 B가 주어진다. A와 B는 1 이상, 1,000 이하이다.
+		    각 테스트케이스마다 A+B를 한 줄에 하나씩 순서대로 출력한다. 
+		    */
+		   
+		   int T = sc.nextInt();
+		  
+		   for(int i=0; i<T; i++) {
+			   int A = sc.nextInt();
+			   int B = sc.nextInt();
+			   System.out.println(A+B);
+		   }
+		   
+		   /*
+		   import java.util.StringTokenizer;
+		   public class Main {
+		   	
+		   	public static void main(String[] args) throws IOException { // IO Exception처리 필수
+		   		
+		   		// Reader와 Writer를 선언
+		   		// 각각 InputStreamReader와 OutputStreamWriter를 통해 입력
+		   		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		   		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		   		
+		   		// read로 입력받은 데이터를 가공하기 위한 Tokenizer 선언
+		   		// BufferedReader로 입력한 값은 전부 String으로 리턴되므로 토큰화하여 가공해야함
+		   		StringTokenizer st;
+		   		
+		   		// String값이 리턴되므로 필요한 형태로 형변환 해줘야한다.
+		   		int T = Integer.parseInt(br.readLine());
+		   		
+		   		for(int i=0; i <T; i++) {
+		   			
+		   			// String으로 입력받은 값을 Token화 하여
+		   			st = new StringTokenizer(br.readLine());
+		   			
+		   			// 토큰별로 잘라서 원하는 형태로 데이터 형변환 후
+		   			int A = Integer.parseInt(st.nextToken());
+		   			int B = Integer.parseInt(st.nextToken());
+		   		
+		   			int result = A+B;
+		   			
+		   			// 결과 출력
+		   			bw.write(result +"\n"); // 자동 줄바꿈이 없기때문에 "\n"을 통해 줄바꿈해준다.
+		   			
+		   		}
+		   		
+		   		// Writer의 경우 반드시 flush()나 close()를 호출해 닫아주어야 한다.
+		   		bw.flush();	
+		   		
+		   	}
+		   	
+		   }
+			*/
 	
+	
+	}
 }
