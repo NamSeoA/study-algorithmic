@@ -96,8 +96,7 @@ public class practice2 {
 		   /*
 		    n이 주어졌을 때, 1부터 n까지 합을 구하는 프로그램을 작성하시오.
 		    첫째 줄에 n (1 ≤ n ≤ 10,000)이 주어진다.
-		   */
-		 
+		  
 		   int n = sc.nextInt();
 		   int sum = 0;
 		   
@@ -106,13 +105,14 @@ public class practice2 {
 		   }
 		   System.out.println(sum);
 		   
+		    */
 		   
 		   
 		   // 15552번 
 		   /*
 		    첫 줄에 테스트케이스의 개수 T가 주어진다. T는 최대 1,000,000이다. 다음 T줄에는 각각 두 정수 A와 B가 주어진다. A와 B는 1 이상, 1,000 이하이다.
 		    각 테스트케이스마다 A+B를 한 줄에 하나씩 순서대로 출력한다. 
-		    */
+		    
 		   
 		   int T = sc.nextInt();
 		  
@@ -122,6 +122,9 @@ public class practice2 {
 			   System.out.println(A+B);
 		   }
 		   
+		   */
+		   
+		
 		   /*
 		   import java.util.StringTokenizer;
 		   public class Main {
@@ -163,6 +166,20 @@ public class practice2 {
 		   	
 		   }
 			*/
+		   
+		
+		   // 2438
+		   //첫째 줄에는 별 1개, 둘째 줄에는 별 2개, N번째 줄에는 별 N개를 찍는 문제
+		   
+		   int N = sc.nextInt();
+		   
+		   for(int i=0; i<N; i++) {
+			   for(int j=0; j <= i; j++) {
+				   System.out.print("*");
+			   }
+			   System.out.println("");
+		   }
+		   
 	
 	
 	}
