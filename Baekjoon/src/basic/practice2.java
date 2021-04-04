@@ -169,7 +169,7 @@ public class practice2 {
 		   
 		
 		   // 2438
-		   //첫째 줄에는 별 1개, 둘째 줄에는 별 2개, N번째 줄에는 별 N개를 찍는 문제
+		   /*첫째 줄에는 별 1개, 둘째 줄에는 별 2개, N번째 줄에는 별 N개를 찍는 문제
 		   
 		   int N = sc.nextInt();
 		   
@@ -177,10 +177,53 @@ public class practice2 {
 			   for(int j=0; j <= i; j++) {
 				   System.out.print("*");
 			   }
-			   System.out.println("");
+			   System.out.println(""); 	//행을 바꿔주기 위한 공백 
 		   }
 		   
-	
+		    // BufferedReader 사용 
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+			
+			int N = Integer.parseInt(br.readLine());
+	        br.close();
+	        
+			for(int i=1; i <=N; i++) {
+				for(int j=1; j <=i; j++) {
+					bw.write("*");
+			
+				}
+				bw.newLine();
+			}
+	        bw.flush();
+	        bw.close();
+	        
+		   */
+		   
+		
+		   
+		   // 2439번 
+		   /*첫째 줄에는 별 1개, 둘째 줄에는 별 2개, N번째 줄에는 별 N개를 찍는 문제
+			하지만, 오른쪽을 기준으로 정렬한 별(예제 참고)을 출력하시오.*/
+		   int M = sc.nextInt();
+		   
+		   for(int i=0; i<M; i++) {
+			   for(int j=i+1; j<M; j++) {
+				   System.out.print(" "); //공백이 갯수만큼 채워지기 전에 다음줄로 바뀌면 안되므로 print 사용 
+			   }
+			   for(int k=M-i; k<=M; k++) { //예를 들어 M=5이고, i=0이면 M-i부터 M까지 "*"가 출력되어야한다.
+				   System.out.print("*"); // 첫 줄에 "*"이 한 번 출력된다.
+			   }
+			   System.out.println(""); //다음줄로 넘어가기 위함 
+		   }
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
 	
 	}
 }
