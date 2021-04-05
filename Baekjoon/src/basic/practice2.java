@@ -203,11 +203,11 @@ public class practice2 {
 		   
 		   // 2439번 
 		   /*첫째 줄에는 별 1개, 둘째 줄에는 별 2개, N번째 줄에는 별 N개를 찍는 문제
-			하지만, 오른쪽을 기준으로 정렬한 별(예제 참고)을 출력하시오.*/
+			하지만, 오른쪽을 기준으로 정렬한 별(예제 참고)을 출력하시오.
 		   int M = sc.nextInt();
 		   
-		   for(int i=0; i<M; i++) {
-			   for(int j=i+1; j<M; j++) {
+		   for(int i=0; i<M; i++) { // //i는 0부터 시작하여 M번만큼 1씩 증가하여 반복
+			   for(int j=i+1; j<M; j++) { 
 				   System.out.print(" "); //공백이 갯수만큼 채워지기 전에 다음줄로 바뀌면 안되므로 print 사용 
 			   }
 			   for(int k=M-i; k<=M; k++) { //예를 들어 M=5이고, i=0이면 M-i부터 M까지 "*"가 출력되어야한다.
@@ -215,9 +215,23 @@ public class practice2 {
 			   }
 			   System.out.println(""); //다음줄로 넘어가기 위함 
 		   }
+		   */
 		   
+		
+		
+		   // 10871번
+		   /* 정수 N개로 이루어진 수열 A와 정수 X가 주어진다. 이때, A에서 X보다 작은 수를 모두 출력하는 프로그램을 작성하시오. */
 		   
+		   int N = sc.nextInt();
+		   int X = sc.nextInt();
+		   int[] A = new int[N];
 		   
+		   for(int i=0; i<N; i++) {
+			   A[i] = sc.nextInt();
+			   if(X > A[i]) {
+				   System.out.println(A[i]+" ");
+			   }
+		   }
 		   
 		   
 		   
