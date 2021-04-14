@@ -190,7 +190,6 @@ public static void main(String[] args) {
 			첫째 줄에 시험 본 과목의 개수 N이 주어진다. 이 값은 1000보다 작거나 같다. 둘째 줄에 세준이의 현재 성적이 주어진다. 
 			이 값은 100보다 작거나 같은 음이 아닌 정수이고, 적어도 하나의 값은 0보다 크다.
 			첫째 줄에 새로운 평균을 출력한다. 실제 정답과 출력값의 절대오차 또는 상대오차가 10-2 이하이면 정답이다.
-			*/
 	   
 	       double max = 0; // 최고점 
 	       double total = 0.0; // 합계 
@@ -208,16 +207,55 @@ public static void main(String[] args) {
     			   max = score[i];
 	    	   }
 	       }
-	       
 	       for(int i=0; i<N; i++) {
 	    	   score[i] = score[i]/max*100;
 	    	   
 	    	   total += score[i];
 	       }
-	       
 	       System.out.println("최종 평균 : "+total/N);
+	       */
 	       
 	       
+	       // 8958
+	       /*
+	        "OOXXOXXOOO"와 같은 OX퀴즈의 결과가 있다. O는 문제를 맞은 것이고, X는 문제를 틀린 것이다. 문제를 맞은 경우 그 문제의 점수는 그 문제까지 연속된 O의 개수가 된다. 
+	         예를 들어, 10번 문제의 점수는 3이 된다.
+			"OOXXOXXOOO"의 점수는 1+2+0+0+1+0+0+1+2+3 = 10점이다.
+			 OX퀴즈의 결과가 주어졌을 때, 점수를 구하는 프로그램을 작성하시오.
+			 첫째 줄에 테스트 케이스의 개수가 주어진다. 각 테스트 케이스는 한 줄로 이루어져 있고, 길이가 0보다 크고 80보다 작은 문자열이 주어진다. 문자열은 O와 X만으로 이루어져 있다.
+			 */
+		
+			System.out.println("테스트 케이스의 개수를 구하시오.");
+			// 각 테스트 별 ox
+			String[] tests = new String[sc.nextInt()];
+			
+			for(int i=0; i<tests.length; i++) {
+				tests[i] = sc.next();
+			}
+			
+			sc.close();
+		
+			for(int i=0; i<tests.length; i++) { // 케이스 수 
+				int cnt =0; //연속 횟수
+				int sum =0; //누적 합산
+				
+				for(int j=0; j<tests[i].length(); j++) { // 배열 길이 
+					if(tests[i].charAt(j) == 'O') { // chatAt() : string으로 저장된 문자열 중에서 한글자만 선택해서 char타입으로 변환  
+						cnt++;
+						sum += cnt;  // sum = sum + cnt 
+					}else {
+						cnt = 0;
+					}
+				}
+				System.out.println("총 점수 : "+sum);
+			}
 	       
+			
+			
+			
+			
+			
+			
+			
   }
 }
