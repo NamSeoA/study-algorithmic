@@ -6,14 +6,13 @@ public class practice5 {
 
 	public static void main(String[] args) {
 	
+		Scanner sc = new Scanner(System.in); 
+		
 		// 11720
 		/*
 		 N개의 숫자가 공백 없이 쓰여있다. 이 숫자를 모두 합해서 출력하는 프로그램을 작성하시오.
 		 첫째 줄에 숫자의 개수 N (1 ≤ N ≤ 100)이 주어진다. 둘째 줄에 숫자 N개가 공백없이 주어진다.
 		 입력으로 주어진 숫자 N개의 합을 출력한다.
-		 */
-		
-		Scanner sc = new Scanner(System.in); 
 		
 		int N = sc.nextInt(); //숫자의 개수
 		String numbers = sc.next(); // 숫자들 입력 
@@ -27,6 +26,7 @@ public class practice5 {
 			// char -> int : numbers.charAt(i)- '0' (각 숫자의 아스키코드는 0을 의미하는 48을 빼주면 자신의 수를 가지게 됨)
 		}
 		System.out.println("숫자의 총 합 : " + sum);
+		*/
 		
 		
 		// 10809
@@ -35,7 +35,6 @@ public class practice5 {
 		 첫째 줄에 단어 S가 주어진다. 단어의 길이는 100을 넘지 않으며, 알파벳 소문자로만 이루어져 있다.
 		 각각의 알파벳에 대해서, a가 처음 등장하는 위치, b가 처음 등장하는 위치, ... z가 처음 등장하는 위치를 공백으로 구분해서 출력한다.
 		 만약, 어떤 알파벳이 단어에 포함되어 있지 않다면 -1을 출력한다. 단어의 첫 번째 글자는 0번째 위치이고, 두 번째 글자는 1번째 위치이다.
-		 */
 		
 		int[] words = new int[26];
 
@@ -60,6 +59,39 @@ public class practice5 {
 	    	System.out.print(words[i] + " ");
 	    }
 	    sc.close();
+		*/
+	    
+	    
+	    // 2675 
+	    /*
+	     문자열 S를 입력받은 후에, 각 문자를 R번 반복해 새 문자열 P를 만든 후 출력하는 프로그램을 작성하시오. 즉, 첫 번째 문자를 R번 반복하고, 두 번째 문자를 R번 반복하는 식으로 P를 만들면 된다. 
+	     S에는 QR Code "alphanumeric" 문자만 들어있다. QR Code "alphanumeric" 문자는 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\$%*+-./: 이다.
+		 첫째 줄에 테스트 케이스의 개수 T(1 ≤ T ≤ 1,000)가 주어진다. 각 테스트 케이스는 반복 횟수 R(1 ≤ R ≤ 8), 문자열 S가 공백으로 구분되어 주어진다. S의 길이는 적어도 1이며, 20글자를 넘지 않는다. 
+		 각 테스트 케이스에 대해 P를 출력한다.
+	     */
+		
+		int T = sc.nextInt(); //테스트 케이스 개수
+		
+		for(int i=0; i<T; i++) {
+			
+			int R = sc.nextInt(); // R번 만큼 반복할 
+			String S = sc.next(); // 문자열 입력 
+			
+		  for(int j=0; j<S.length(); j++) {
+			for(int k=0; k<R; k++) { // R만큼 반복 
+				S.charAt(j);
+			}
+		   }
+		}
+		
+		System.out.println();
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 }
