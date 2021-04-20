@@ -68,7 +68,6 @@ public class practice5 {
 	     S에는 QR Code "alphanumeric" 문자만 들어있다. QR Code "alphanumeric" 문자는 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\$%*+-./: 이다.
 		 첫째 줄에 테스트 케이스의 개수 T(1 ≤ T ≤ 1,000)가 주어진다. 각 테스트 케이스는 반복 횟수 R(1 ≤ R ≤ 8), 문자열 S가 공백으로 구분되어 주어진다. S의 길이는 적어도 1이며, 20글자를 넘지 않는다. 
 		 각 테스트 케이스에 대해 P를 출력한다.
-	     */
 		
 		int T = sc.nextInt(); //테스트 케이스 개수
 		
@@ -85,11 +84,41 @@ public class practice5 {
 		}
 		
 		System.out.println();
+		*/
 		
 		
 		
+		// 1157
+		/*
+		  알파벳 대소문자로 된 단어가 주어지면, 이 단어에서 가장 많이 사용된 알파벳이 무엇인지 알아내는 프로그램을 작성하시오. 단, 대문자와 소문자를 구분하지 않는다.
+		  첫째 줄에 알파벳 대소문자로 이루어진 단어가 주어진다. 주어지는 단어의 길이는 1,000,000을 넘지 않는다.
+		  첫째 줄에 이 단어에서 가장 많이 사용된 알파벳을 대문자로 출력한다. 단, 가장 많이 사용된 알파벳이 여러 개 존재하는 경우에는 ?를 출력한다.
+		 */
 		
+		int[] arr = new int[26]; // 영문자의 개수 26개 
+		String eng = sc.next(); //알파벳으로 이루어진 단어 
 		
+		for(int i=0; i<eng.length(); i++) {
+			
+			if('A' <= eng.charAt(i) && eng.charAt(i) <= 'Z') { // 대문자 범
+				arr[eng.charAt(i) - 'A']++; // 해당 인덱스의 값 1증가 
+			}else {
+				arr[eng.charAt(i) - 'a']++;
+			}
+		}
+		
+		int max = -1; // 가장 큰 값을 가지고 있는 인덱스 값을 저장 
+		char ch = '?'; // 출력할 문자 
+		
+		for(int i=0; i<26; i++) {
+			if(arr[i] > max) {
+				max = arr[i];
+				ch = (char)(i+65);  // 대문자로 출력해야하므로 65를 더해준다 & char 형 타입의 변수에 int 와 char 을 연산하여 저장할 경우 반드시 캐스팅
+			}else if(arr[i] == max) {
+				ch = '?'; // 배열 원소값이 max 값이랑 같을 경우 최대 개수의 문자가 2개 이상이라는 의미이므로 ch 를 물음표(?) 로 바꾸어 주어야 함 
+			}
+		}
+		System.out.println("가장 많이 사용된 알파벳 : " + ch);
 		
 		
 		
